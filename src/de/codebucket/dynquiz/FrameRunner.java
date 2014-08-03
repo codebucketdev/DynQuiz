@@ -5,16 +5,16 @@ import java.awt.EventQueue;
 import java.awt.Toolkit;
 import java.awt.Window;
 
+import de.codebucket.dynquiz.util.WindowUtils.LookAndFeel;
+
+import de.codebucket.dynquiz.util.WindowUtils;
+
 public class FrameRunner 
 {
-	/*static
+	static
 	{
-		try
-		{
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		}
-		catch(Exception ex) {};
-	}*/
+		WindowUtils.setLookAndFeel(LookAndFeel.DEFAULT);
+	}
 	
 	public static void centerWindow(Window frame) 
 	{
