@@ -90,7 +90,7 @@ public class ConverterWindow extends JFrame
 		
 		setResizable(false);
 		setLocationRelativeTo(null);
-		setTitle("Quiz Converter v1.5");
+		setTitle("Quiz Converter v1.6");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 450, 325);
 		
@@ -133,7 +133,7 @@ public class ConverterWindow extends JFrame
 		{
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				int result = JOptionPane.showConfirmDialog(null, "Do you want return to Launcher? All changes will be lost!", "Quiz Converter v1.5", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+				int result = JOptionPane.showConfirmDialog(null, "Do you want return to Launcher? All changes will be lost!", "Quiz Converter v1.6", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
 				if(result == JOptionPane.YES_OPTION)
 				{
 					dispose();
@@ -203,7 +203,7 @@ public class ConverterWindow extends JFrame
 				Date today = Calendar.getInstance().getTime();        
 				String reportDate = df.format(today);
 				lines.add("Date: " + reportDate);
-				lines.add("Version: 1.5 Release");
+				lines.add("Version: 1.6 Release");
 				lines.add("Working directory: " + System.getProperty("user.dir"));
 				lines.add("---------------------------------------------------------------");
 				lines.add("Obtained system information:");
@@ -261,7 +261,7 @@ public class ConverterWindow extends JFrame
 		{
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				showMsgDialog(null, "Quiz Converter\nBy Codebucket. Version 1.5\n\nSupport: support@codebucket.de", "About DynQuiz v1.5", JOptionPane.INFORMATION_MESSAGE, null);
+				showMsgDialog(null, "Quiz Converter\nBy Codebucket. Version 1.6\n\nSupport: support@codebucket.de", "About DynQuiz v1.6", JOptionPane.INFORMATION_MESSAGE, null);
 			}
 		});
 		mnHelp.add(mAbout);
@@ -276,7 +276,7 @@ public class ConverterWindow extends JFrame
 		lblTitle.setBounds(10, 12, 344, 36);
 		contentPane.add(lblTitle);
 		
-		JLabel lblVersion = new JLabel("By Codebucket. Version 1.5");
+		JLabel lblVersion = new JLabel("By Codebucket. Version 1.6");
 		lblVersion.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblVersion.setBounds(13, 56, 239, 14);
 		contentPane.add(lblVersion);
@@ -412,7 +412,7 @@ public class ConverterWindow extends JFrame
 			File input = new File(txtInput.getText());
 			if(!input.exists())
 			{
-				JOptionPane.showMessageDialog(null, "Cannot open file: File not exists!", "Quiz Converter v1.5", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Cannot open file: File not exists!", "Quiz Converter v1.6", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 			
@@ -426,7 +426,7 @@ public class ConverterWindow extends JFrame
 			}
 			catch (Exception ex)
 			{
-				JOptionPane.showMessageDialog(null, "Cannot open file: Invalid or broken file!", "Quiz Converter v1.5", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Cannot open file: Invalid or broken file!", "Quiz Converter v1.6", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 			
@@ -439,12 +439,12 @@ public class ConverterWindow extends JFrame
 				}
 				
 				FileManager.writeBytes(output, write);
-				JOptionPane.showMessageDialog(null, "File sucessfully converted!\nOutput: " + output.getPath(), "Quiz Converter v1.5", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "File sucessfully converted!\nOutput: " + output.getPath(), "Quiz Converter v1.6", JOptionPane.INFORMATION_MESSAGE);
 				return;
 			}
 			catch (Exception ex)
 			{
-				JOptionPane.showMessageDialog(null, "Cannot save file: " + ex.getMessage(), "Quiz Converter v1.5", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Cannot save file: " + ex.getMessage(), "Quiz Converter v1.6", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 		}
@@ -453,7 +453,7 @@ public class ConverterWindow extends JFrame
 			File input = new File(txtInput.getText());
 			if(!input.exists())
 			{
-				JOptionPane.showMessageDialog(null, "Cannot open file: File not exists!", "Quiz Converter v1.5", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Cannot open file: File not exists!", "Quiz Converter v1.6", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 			
@@ -467,7 +467,7 @@ public class ConverterWindow extends JFrame
 			}
 			catch (Exception ex)
 			{
-				JOptionPane.showMessageDialog(null, "Cannot open file: Invalid or broken file!", "Quiz Converter v1.5", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Cannot open file: Invalid or broken file!", "Quiz Converter v1.6", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 			
@@ -480,12 +480,12 @@ public class ConverterWindow extends JFrame
 				}
 				
 				FileManager.writeFile(output, new JSONParser().parse(new String(write)).toString());
-				JOptionPane.showMessageDialog(null, "File sucessfully converted!\nOutput: " + output.getPath(), "Quiz Converter v1.5", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "File sucessfully converted!\nOutput: " + output.getPath(), "Quiz Converter v1.6", JOptionPane.INFORMATION_MESSAGE);
 				return;
 			}
 			catch (Exception ex)
 			{
-				JOptionPane.showMessageDialog(null, "Cannot save file: " + ex.getMessage(), "Quiz Converter v1.5", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Cannot save file: " + ex.getMessage(), "Quiz Converter v1.6", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 		}
@@ -494,7 +494,7 @@ public class ConverterWindow extends JFrame
 			File input = new File(txtInput.getText());
 			if(!input.exists())
 			{
-				JOptionPane.showMessageDialog(null, "Cannot open file: File not exists!", "Quiz Converter v1.5", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Cannot open file: File not exists!", "Quiz Converter v1.6", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 			
@@ -508,7 +508,7 @@ public class ConverterWindow extends JFrame
 			}
 			catch (Exception ex)
 			{
-				JOptionPane.showMessageDialog(null, "Cannot open file: Invalid or broken file!", "Quiz Converter v1.5", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Cannot open file: Invalid or broken file!", "Quiz Converter v1.6", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 			
@@ -521,12 +521,12 @@ public class ConverterWindow extends JFrame
 				}
 				
 				FileManager.writeBytes(output, write);
-				JOptionPane.showMessageDialog(null, "File sucessfully converted!\nOutput: " + output.getPath(), "Quiz Converter v1.5", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "File sucessfully converted!\nOutput: " + output.getPath(), "Quiz Converter v1.6", JOptionPane.INFORMATION_MESSAGE);
 				return;
 			}
 			catch (Exception ex)
 			{
-				JOptionPane.showMessageDialog(null, "Cannot save file: " + ex.getMessage(), "Quiz Converter v1.5", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Cannot save file: " + ex.getMessage(), "Quiz Converter v1.6", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 		}
@@ -568,7 +568,7 @@ public class ConverterWindow extends JFrame
 	
 	private void exit()
 	{
-		int result = JOptionPane.showConfirmDialog(null, "Do you want to exit application? All changes will be lost!", "Quiz Converter v1.5", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+		int result = JOptionPane.showConfirmDialog(null, "Do you want to exit application? All changes will be lost!", "Quiz Converter v1.6", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
 		if(result == JOptionPane.YES_OPTION)
 		{
 			System.exit(1);

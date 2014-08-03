@@ -49,9 +49,9 @@ public class UpdaterWindow extends JFrame
 	 * Create the frame.
 	 */
 	public UpdaterWindow()
-	{
+	{		
 		setResizable(false);
-		setTitle("DynQuiz Updater v1.5");
+		setTitle("DynQuiz Updater v1.6");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 450, 200);
 		contentPane = new JPanel();
@@ -61,7 +61,7 @@ public class UpdaterWindow extends JFrame
 		
 		final JLabel lblStatus = new JLabel();
 		lblStatus.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblStatus.setIcon(new ImageIcon(UpdaterWindow.class.getResource("/images/gif_load.gif")));
+		lblStatus.setIcon(new ImageIcon(UpdaterWindow.class.getResource("/de/codebucket/dynquiz/images/gif_load.gif")));
 		lblStatus.setHorizontalAlignment(SwingConstants.CENTER);
 		lblStatus.setBounds(12, 12, 420, 80);
 		contentPane.add(lblStatus);
@@ -140,7 +140,7 @@ public class UpdaterWindow extends JFrame
 					setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 					
 					progressBar.setIndeterminate(false);
-					JOptionPane.showMessageDialog(null, "An error occurred while checking for new updates.", "DynQuiz Updater v1.5", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "An error occurred while checking for new updates.", "DynQuiz Updater v1.6", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				
@@ -154,14 +154,14 @@ public class UpdaterWindow extends JFrame
 						setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 						
 						progressBar.setIndeterminate(false);
-						JOptionPane.showMessageDialog(null, "No Update found! You have already the newest version.", "DynQuiz Updater v1.5", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "No Update found! You have already the newest version.", "DynQuiz Updater v1.6", JOptionPane.INFORMATION_MESSAGE);
 						return;
 					}
 					
 					progressBar.setIndeterminate(false);
 					lblStatus.setText("Waiting for user response...");
 					lblDetails.setText("New Update found! Update version: " + update.getVersion());
-					int result = JOptionPane.showConfirmDialog(null, "New Update found!\nUpdate version: " + update.getVersion() + "\nYour version: " + getCurrent().getVersion() + "\n\nDo you want to download the new Update?", "DynQuiz Updater v1.5", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+					int result = JOptionPane.showConfirmDialog(null, "New Update found!\nUpdate version: " + update.getVersion() + "\nYour version: " + getCurrent().getVersion() + "\n\nDo you want to download the new Update?", "DynQuiz Updater v1.6", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
 					if(result == JOptionPane.YES_OPTION)
 					{
 						try 
@@ -212,7 +212,7 @@ public class UpdaterWindow extends JFrame
 									setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 									progressBar.setValue(100);
 									
-									int result = JOptionPane.showConfirmDialog(null, "Update sucessfully downloaded!\nTo apply the changes, this program needs to be restarted.\nDo you like to restart this application?", "DynQuiz Updater v1.5", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+									int result = JOptionPane.showConfirmDialog(null, "Update sucessfully downloaded!\nTo apply the changes, this program needs to be restarted.\nDo you like to restart this application?", "DynQuiz Updater v1.6", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 									if(result == JOptionPane.YES_OPTION)
 									{
 										try

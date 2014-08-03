@@ -95,7 +95,7 @@ public class EditorWindow extends JFrame
 			}
 		});
 		
-		setTitle("Quiz Editor v1.5");
+		setTitle("Quiz Editor v1.6");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -114,7 +114,7 @@ public class EditorWindow extends JFrame
 		{
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				int result = JOptionPane.showConfirmDialog(null, "Do you want to continue? All changes will be lost!", "Quiz Editor v1.5", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+				int result = JOptionPane.showConfirmDialog(null, "Do you want to continue? All changes will be lost!", "Quiz Editor v1.6", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
 				if(result == JOptionPane.YES_OPTION)
 				{
 					newQuiz();
@@ -165,7 +165,7 @@ public class EditorWindow extends JFrame
 				{
 					public void run()
 					{
-						int result = JOptionPane.showConfirmDialog(null, "Do you want to revert last changes?", "Quiz Editor v1.5", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+						int result = JOptionPane.showConfirmDialog(null, "Do you want to revert last changes?", "Quiz Editor v1.6", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
 						if(result == JOptionPane.YES_OPTION)
 						{
 							revertChanges();
@@ -206,11 +206,12 @@ public class EditorWindow extends JFrame
 		mnWindow.add(mClose);
 		
 		JMenuItem mLauncher = new JMenuItem("Back to Launcher");
+		mLauncher.setFont(new Font("Dialog", Font.BOLD, 12));
 		mLauncher.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				int result = JOptionPane.showConfirmDialog(null, "Do you want return to Launcher? All changes will be lost!", "Quiz Editor v1.5", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+				int result = JOptionPane.showConfirmDialog(null, "Do you want return to Launcher? All changes will be lost!", "Quiz Editor v1.6", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
 				if(result == JOptionPane.YES_OPTION)
 				{
 					dispose();
@@ -233,6 +234,7 @@ public class EditorWindow extends JFrame
 		mnWindow.add(mLauncher);
 		
 		JMenuItem mRestart = new JMenuItem("Restart Application");
+		mRestart.setFont(new Font("Dialog", Font.BOLD, 12));
 		mRestart.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent arg0) 
@@ -260,6 +262,7 @@ public class EditorWindow extends JFrame
 		menuBar.add(mnHelp);
 		
 		JMenuItem mSystem = new JMenuItem("System Information");
+		mSystem.setFont(new Font("Dialog", Font.BOLD, 12));
 		mSystem.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent arg0) 
@@ -278,7 +281,7 @@ public class EditorWindow extends JFrame
 				Date today = Calendar.getInstance().getTime();        
 				String reportDate = df.format(today);
 				lines.add("Date: " + reportDate);
-				lines.add("Version: 1.5 Release");
+				lines.add("Version: 1.6 Release");
 				lines.add("Working directory: " + System.getProperty("user.dir"));
 				lines.add("---------------------------------------------------------------");
 				lines.add("Obtained system information:");
@@ -314,6 +317,7 @@ public class EditorWindow extends JFrame
 		mnHelp.add(mSystem);
 		
 		JMenuItem mUpdate = new JMenuItem("Check for Updates");
+		mUpdate.setFont(new Font("Dialog", Font.BOLD, 12));
 		mUpdate.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent arg0) 
@@ -330,11 +334,12 @@ public class EditorWindow extends JFrame
 		mnHelp.add(mUpdate);
 		
 		JMenuItem mAbout = new JMenuItem("About DynQuiz");
+		mAbout.setFont(new Font("Dialog", Font.BOLD, 12));
 		mAbout.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				showMsgDialog(null, "Quiz Editor\nBy Codebucket. Version 1.5\n\nSupport: support@codebucket.de", "About DynQuiz v1.5", JOptionPane.INFORMATION_MESSAGE, null);
+				showMsgDialog(null, "Quiz Editor\nBy Codebucket. Version 1.6\n\nSupport: support@codebucket.de", "About DynQuiz v1.6", JOptionPane.INFORMATION_MESSAGE, null);
 			}
 		});
 		mnHelp.add(mAbout);
@@ -349,7 +354,7 @@ public class EditorWindow extends JFrame
 		lblName.setBounds(10, 11, 344, 36);
 		contentPane.add(lblName);
 		
-		JLabel lblAbout = new JLabel("By Codebucket. Version 1.5");
+		JLabel lblAbout = new JLabel("By Codebucket. Version 1.6");
 		lblAbout.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblAbout.setBounds(13, 55, 239, 14);
 		contentPane.add(lblAbout);
@@ -609,7 +614,7 @@ public class EditorWindow extends JFrame
 				catch(Exception ex)
 				{
 					changeStatus("Ready.", 0, false);
-					showMsgDialog(null, "Could not save quiz: " + ex.getMessage(), "Quiz Editor v1.5", JOptionPane.ERROR_MESSAGE, null);
+					showMsgDialog(null, "Could not save quiz: " + ex.getMessage(), "Quiz Editor v1.6", JOptionPane.ERROR_MESSAGE, null);
 					return;
 				}
 				
@@ -635,7 +640,7 @@ public class EditorWindow extends JFrame
 	{
 		if(recent == null)
 		{
-			showMsgDialog(null, "Could not revert last changes, because the file was not saved.", "Quiz Editor v1.5", JOptionPane.WARNING_MESSAGE, null);
+			showMsgDialog(null, "Could not revert last changes, because the file was not saved.", "Quiz Editor v1.6", JOptionPane.WARNING_MESSAGE, null);
 			Toolkit.getDefaultToolkit().beep();
 			return;
 		}
@@ -650,9 +655,9 @@ public class EditorWindow extends JFrame
 			this.questions = quiz.getQuestions();
 			resetQuestionPane();
 		} 
-		catch(IOException ex)
+		catch(Exception ex)
 		{
-			JOptionPane.showMessageDialog(null, "Cannot open file: Invalid or broken file!", "Quiz Editor v1.5", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Cannot open file: Invalid or broken file!", "Quiz Editor v1.6", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 	

@@ -20,7 +20,7 @@ public abstract class UpdateTask
 	private String url;
 	private Update current;
 	
-	public static final Update CURRENT_UPDATE = new Update("DynQuiz", "v1.5", "http://www.codebucket.de/downloads/dynquiz/v1.5/DynQuiz-v1.5.jar");
+	public static final Update CURRENT_UPDATE = new Update("DynQuiz", "v1.6", "http://www.codebucket.de/downloads/dynquiz/v1.6/DynQuiz-v1.6.jar");
 	
 	public UpdateTask(UUID key, String url, Update current)
 	{

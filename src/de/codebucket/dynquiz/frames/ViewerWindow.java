@@ -13,7 +13,6 @@ import javax.swing.JTextField;
 
 import java.awt.Font;
 import java.io.File;
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -97,7 +96,7 @@ public class ViewerWindow extends JFrameScreen implements KeyListener, ActionLis
 		int res = dialog.showOpenDialog(contentPane);
 		if(res != JFileChooser.APPROVE_OPTION) 
 		{
-			JOptionPane.showMessageDialog(null, "You have to select a file to start the quiz!", "Quiz Viewer v1.5", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null, "You have to select a file to start the quiz!", "Quiz Viewer v1.6", JOptionPane.WARNING_MESSAGE);
 			this.exit();
 			return;
 		}
@@ -105,14 +104,14 @@ public class ViewerWindow extends JFrameScreen implements KeyListener, ActionLis
 		this.file = dialog.getSelectedFile();
 		if(!file.exists())
 		{
-			JOptionPane.showMessageDialog(null, "Cannot open file: File not exists!", "Quiz Viewer v1.5", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Cannot open file: File not exists!", "Quiz Viewer v1.6", JOptionPane.ERROR_MESSAGE);
 			this.exit();
 			return;
 		}
 		
 		if(!file.getName().endsWith(".quiz"))
 		{
-			JOptionPane.showMessageDialog(null, "Cannot open file: Wrong or unsupported type!", "Quiz Viewer v1.5", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Cannot open file: Wrong or unsupported type!", "Quiz Viewer v1.6", JOptionPane.ERROR_MESSAGE);
 			this.exit();
 			return;
 		}
@@ -123,9 +122,9 @@ public class ViewerWindow extends JFrameScreen implements KeyListener, ActionLis
 			CustomQuiz quiz = (CustomQuiz) ClassSerialiser.readData(data, CustomQuiz.class, "UTF-8");
 			this.quiz = quiz;
 		}
-		catch(IOException ex)
+		catch(Exception ex)
 		{
-			JOptionPane.showMessageDialog(null, "Cannot open file: Invalid or broken file!", "Quiz Viewer v1.5", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Cannot open file: Invalid or broken file!", "Quiz Viewer v1.6", JOptionPane.ERROR_MESSAGE);
 			this.exit();
 			return;
 		}
@@ -133,7 +132,7 @@ public class ViewerWindow extends JFrameScreen implements KeyListener, ActionLis
 		setFocusable(true);
 		addKeyListener(this);
 		setResizable(false);
-	    setTitle("Quiz Viewer v1.5: $title");
+	    setTitle("Quiz Viewer v1.6: $title");
 	    setBounds(100, 100, 1280, 1024);
 	    setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 	    FrameRunner.centerWindow(this);
@@ -505,10 +504,10 @@ public class ViewerWindow extends JFrameScreen implements KeyListener, ActionLis
 					String reportDate = df.format(today);
 					
 					lines.add("Date: " + reportDate);
-					lines.add("Version: 1.5 Release");
+					lines.add("Version: 1.6 Release");
 					lines.add("Working directory: " + System.getProperty("user.dir"));
 					lines.add("---------------------------------------------------------------");
-					lines.add("Quiz v1.5 Information:");
+					lines.add("Quiz v1.6 Information:");
 					lines.add("File: " + this.file.getAbsolutePath());
 					lines.add("User: " + System.getProperty("user.name"));
 					lines.add(" ");
@@ -547,7 +546,7 @@ public class ViewerWindow extends JFrameScreen implements KeyListener, ActionLis
 				}
 				catch(Exception ex)
 				{
-					JOptionPane.showMessageDialog(null, "Could not save results: " + ex.getMessage(), "Quiz Viewer v1.5", JOptionPane.ERROR_MESSAGE, null);
+					JOptionPane.showMessageDialog(null, "Could not save results: " + ex.getMessage(), "Quiz Viewer v1.6", JOptionPane.ERROR_MESSAGE, null);
 				}
 			}
 			

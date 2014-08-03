@@ -41,8 +41,8 @@ public class LauncherDialog extends JFrame
 	 * Create the dialog.
 	 */
 	public LauncherDialog()
-	{
-		setTitle("DynQuiz Launcher v1.5");
+	{		
+		setTitle("DynQuiz Launcher v1.6");
 		setResizable(false);
 		setBounds(100, 100, 450, 300);
 		setLocationRelativeTo(null);
@@ -89,7 +89,7 @@ public class LauncherDialog extends JFrame
 				}).start();
 			}
 		});
-		btnViewer.setIcon(new ImageIcon(LauncherDialog.class.getResource("/images/icon_open.png")));
+		btnViewer.setIcon(new ImageIcon(LauncherDialog.class.getResource("/de/codebucket/dynquiz/images/icon_open.png")));
 		btnViewer.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnViewer.setFocusable(false);
 		btnViewer.setBounds(20, 45, 180, 45);
@@ -115,7 +115,7 @@ public class LauncherDialog extends JFrame
 				}).start();
 			}
 		});
-		btnEditor.setIcon(new ImageIcon(LauncherDialog.class.getResource("/images/icon_edit.png")));
+		btnEditor.setIcon(new ImageIcon(LauncherDialog.class.getResource("/de/codebucket/dynquiz/images/icon_edit.png")));
 		btnEditor.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnEditor.setFocusable(false);
 		btnEditor.setBounds(20, 101, 180, 45);
@@ -143,7 +143,7 @@ public class LauncherDialog extends JFrame
 		});
 		btnConverter.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnConverter.setFocusable(false);
-		btnConverter.setIcon(new ImageIcon(LauncherDialog.class.getResource("/images/icon_convert.png")));
+		btnConverter.setIcon(new ImageIcon(LauncherDialog.class.getResource("/de/codebucket/dynquiz/images/icon_convert.png")));
 		btnConverter.setBounds(20, 157, 180, 45);
 		getContentPane().add(btnConverter);
 		
@@ -156,7 +156,7 @@ public class LauncherDialog extends JFrame
 			}
 		});
 		btnExit.setFocusable(false);
-		btnExit.setIcon(new ImageIcon(LauncherDialog.class.getResource("/images/icon_exit.png")));
+		btnExit.setIcon(new ImageIcon(LauncherDialog.class.getResource("/de/codebucket/dynquiz/images/icon_exit.png")));
 		btnExit.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnExit.setBounds(319, 213, 115, 40);
 		getContentPane().add(btnExit);
