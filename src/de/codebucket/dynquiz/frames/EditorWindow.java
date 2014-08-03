@@ -196,6 +196,7 @@ public class EditorWindow extends JFrame
 		menuBar.add(mnWindow);
 		
 		JMenuItem mClose = new JMenuItem("Close Window");
+		mClose.setFont(new Font("Dialog", Font.BOLD, 12));
 		mClose.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent arg0) 
